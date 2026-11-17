@@ -298,8 +298,8 @@ export default function EODReportTab({ token, user, showToast }) {
                 className="calendar-cell"
                 onClick={() => handleOpenCell(day, attendanceRec)}
                 style={{
-                  background: "rgba(74, 31, 69, 0.03)",
-                  border: "1px solid rgba(74, 31, 69, 0.12)",
+                  background: "rgba(26,42,94, 0.03)",
+                  border: "1px solid rgba(26,42,94, 0.12)",
                   borderRadius: "8px",
                   padding: "5px",
                   position: "relative",
@@ -374,7 +374,7 @@ export default function EODReportTab({ token, user, showToast }) {
               <div
                 style={{
                   padding: "8px",
-                  background: "rgba(74, 31, 69, 0.05)",
+                  background: "rgba(26,42,94, 0.05)",
                   borderRadius: "4px",
                   fontSize: "0.8rem",
                 }}>
@@ -454,7 +454,7 @@ export default function EODReportTab({ token, user, showToast }) {
             <div
               style={{
                 display: "flex",
-                borderBottom: "1px solid rgba(74, 31, 69, 0.12)",
+                borderBottom: "1px solid rgba(26,42,94, 0.12)",
                 marginBottom: "10px",
               }}>
               {["Session 1", "Session 2"].map((tab) => (
@@ -537,7 +537,7 @@ export default function EODReportTab({ token, user, showToast }) {
 
       <style>{`
         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; backdrop-filter: blur(4px); }
-        .modal-content { padding: 25px; border: 1px solid rgba(74, 31, 69, 0.12); }
+        .modal-content { padding: 25px; border: 1px solid rgba(26,42,94, 0.12); }
         .session-badge { background: rgba(46, 213, 115, 0.2); color: #2f7d4f; border: 1px solid #2f7d4f; border-radius: 4px; width: 18px; height: 18px; font-size: 0.65rem; display: flex; align-items: center; justify-content: center; font-weight: bold; }
         .edit-icon-btn { background: #2f7d4f; color: black; border: none; border-radius: 4px; padding: 4px; cursor: pointer; display: flex; align-items: center; }
         .badge { padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; }

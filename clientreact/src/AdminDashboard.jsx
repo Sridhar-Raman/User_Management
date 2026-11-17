@@ -246,13 +246,13 @@ function AdminWorkforce({ token, showToast }) {
         
         {/* Left Col: Node Directory */}
         <div className="col left glass" style={{ display: 'flex', flexDirection: 'column' }}>
-          <div className="section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '15px', borderBottom: '1px solid rgba(74, 31, 69, 0.12)' }}>
+          <div className="section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '15px', borderBottom: '1px solid rgba(26,42,94, 0.12)' }}>
             <span className="mini-label" style={{ color: 'var(--accent)', margin: 0 }}>ACTIVE INFRASTRUCTURE NODES</span>
             <span style={{ opacity: 0.5, fontSize: '0.7rem' }}>{filteredEmployees.length} / {data.employees.length} VISIBLE</span>
           </div>
 
           {/* --- FILTER BAR --- */}
-          <div className="filter-bar" style={{ padding: '12px 15px', background: 'rgba(74, 31, 69, 0.02)', display: 'flex', gap: '10px', alignItems: 'center' }}>
+          <div className="filter-bar" style={{ padding: '12px 15px', background: 'rgba(26,42,94, 0.02)', display: 'flex', gap: '10px', alignItems: 'center' }}>
              <input 
                 className="glass-input" 
                 placeholder="Search by name or email..." 
@@ -293,12 +293,12 @@ function AdminWorkforce({ token, showToast }) {
                      <div className="stat-icon-circle" style={{ background: 'var(--accent-soft)', color: 'var(--accent)', width: '32px', height: '32px', borderRadius: '8px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>
                       {e.name.charAt(0)}
                      </div>
-                     <span className="status-pill" style={{ fontSize: '9px', background: 'rgba(74, 31, 69, 0.05)', padding: '2px 8px', borderRadius: '4px' }}>{e.role}</span>
+                     <span className="status-pill" style={{ fontSize: '9px', background: 'rgba(26,42,94, 0.05)', padding: '2px 8px', borderRadius: '4px' }}>{e.role}</span>
                   </div>
                   <div style={{ marginTop: '12px' }}>
                     <strong style={{ display: 'block', fontSize: '0.95rem', color: 'var(--ink)' }}>{e.name}</strong>
                     <small style={{ display: 'block', opacity: 0.5, marginBottom: '8px' }}>{e.email}</small>
-                    <div style={{ paddingTop: '8px', borderTop: '1px solid rgba(74, 31, 69, 0.12)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div style={{ paddingTop: '8px', borderTop: '1px solid rgba(26,42,94, 0.12)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontSize: '0.7rem', color: 'var(--accent)', fontWeight: 'bold' }}>{e.department?.toUpperCase()}</span>
                       <Activity size={12} style={{ opacity: 0.3 }} />
                     </div>
@@ -318,7 +318,7 @@ function AdminWorkforce({ token, showToast }) {
           <div className="burn-graph glass" style={{ marginBottom: '20px', padding: '15px' }}>
             <div className="mini-label">ANNUAL OPERATIONAL BURN</div>
             <div style={{ fontSize: '1.4rem', fontWeight: 'bold', color: 'var(--success)' }}>${data.totalSalaryBurn?.toLocaleString()}</div>
-            <div style={{ height: '4px', background: 'rgba(74, 31, 69, 0.1)', borderRadius: '2px', marginTop: '10px', overflow: 'hidden' }}>
+            <div style={{ height: '4px', background: 'rgba(26,42,94, 0.1)', borderRadius: '2px', marginTop: '10px', overflow: 'hidden' }}>
                 <div style={{ width: '70%', height: '100%', background: 'var(--success)', boxShadow: '0 0 10px var(--success)' }}></div>
             </div>
           </div>
@@ -448,7 +448,7 @@ function AdminTaskMonitor({ token }) {
       data: Object.values(stats),
       backgroundColor: [
         "rgba(55, 66, 250, 1)", // Processing (accent)
-        "#6a5acd",              // Planning
+        "#4f6bed",              // Planning
         "#2f7d4f",              // Completed (success)
         "#a8741a",              // Pending (warning)
         "#c0392b",              // Overdue (danger)
@@ -481,14 +481,14 @@ function AdminTaskMonitor({ token }) {
       ctx.restore();
       ctx.font = "bold 2rem sans-serif";
       ctx.textBaseline = "middle";
-      ctx.fillStyle = "#2a1530";
+      ctx.fillStyle = "#14204a";
       const text = filteredTasks.length.toString();
       const textX = Math.round((width - ctx.measureText(text).width) / 2);
       const textY = height / 2;
       ctx.fillText(text, textX, textY);
       
       ctx.font = "0.7rem sans-serif";
-      ctx.fillStyle = "rgba(42, 21, 48, 0.6)";
+      ctx.fillStyle = "rgba(20,32,74, 0.6)";
       const subText = "TOTAL NODES";
       const subX = Math.round((width - ctx.measureText(subText).width) / 2);
       ctx.fillText(subText, subX, textY + 25);
@@ -507,7 +507,7 @@ function AdminTaskMonitor({ token }) {
     if (status === "Completed") return "var(--success)";
     if (new Date(deadline) < new Date() && status !== "Completed") return "var(--danger)";
     if (status === "Processing") return "var(--accent)";
-    if (status === "Planning") return "#6a5acd";
+    if (status === "Planning") return "#4f6bed";
     return "var(--warning)";
   };
 
@@ -527,7 +527,7 @@ function AdminTaskMonitor({ token }) {
 
           <div className="filter-container" style={{ marginBottom: "30px" }}>
             <p style={{ fontSize: "11px", opacity: 0.6, marginBottom: "8px", fontWeight: 700 }}>NODE STATUS</p>
-            <div className="status-toggle-group" style={{ position: "relative", left: "0", transform: "none", display: "inline-flex", background: "rgba(74, 31, 69, 0.02)" }}>
+            <div className="status-toggle-group" style={{ position: "relative", left: "0", transform: "none", display: "inline-flex", background: "rgba(26,42,94, 0.02)" }}>
               {statuses.map((status) => (
                 <button key={status} onClick={() => setFilterStatus(status)} style={{ fontSize: "10px", padding: "4px 10px" }} className={`status-mini-btn ${filterStatus === status ? "active-orange" : ""}`}>{status}</button>
               ))}
@@ -548,7 +548,7 @@ function AdminTaskMonitor({ token }) {
                   <p style={{ margin: "2px 0" }}>📅 Assigned: {new Date(t.assignedAt).toLocaleDateString()}</p>
                   <p style={{ margin: "2px 0" }}>⏳ Due: {new Date(t.deadline).toLocaleDateString()}</p>
                 </div>
-                <div style={{ marginTop: "auto", paddingTop: "10px", borderTop: "1px solid rgba(74, 31, 69, 0.12)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div style={{ marginTop: "auto", paddingTop: "10px", borderTop: "1px solid rgba(26,42,94, 0.12)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <span className={`status-pill ${t.status.toLowerCase()}`}>{t.status}</span>
                   {t.status === "Completed" ? (
                     <div style={{ textAlign: "right" }}>
@@ -582,9 +582,9 @@ function AdminTaskMonitor({ token }) {
                 key={label} 
                 style={{ 
                   padding: "8px", 
-                  background: "rgba(74, 31, 69, 0.03)", 
+                  background: "rgba(26,42,94, 0.03)", 
                   borderRadius: "6px", 
-                  border: "1px solid rgba(74, 31, 69, 0.12)",
+                  border: "1px solid rgba(26,42,94, 0.12)",
                   transition: "all 0.2s ease"
                 }}
                 className="legend-item"
@@ -752,7 +752,7 @@ function Approvals({ token, showToast }) {
                       <div
                         className="stat-icon-circle"
                         style={{
-                          background: "rgba(74, 31, 69, 0.05)",
+                          background: "rgba(26,42,94, 0.05)",
                           width: "32px",
                           height: "32px",
                           borderRadius: "8px",
@@ -795,7 +795,7 @@ function Approvals({ token, showToast }) {
               <div
                 className="ai-insight-box"
                 style={{
-                  background: "rgba(92, 34, 82, 0.03)",
+                  background: "rgba(26,42,94, 0.03)",
                   border: "1px solid var(--accent-soft)",
                   borderRadius: "12px",
                   padding: "20px",
@@ -826,7 +826,7 @@ function Approvals({ token, showToast }) {
                       display: "flex",
                       alignItems: "center",
                       gap: "5px",
-                      background: "rgba(74, 31, 69, 0.05)",
+                      background: "rgba(26,42,94, 0.05)",
                       padding: "4px 8px",
                       borderRadius: "6px",
                     }}>
@@ -846,7 +846,7 @@ function Approvals({ token, showToast }) {
                       color: "var(--ink)",
                       marginTop: "8px",
                       lineHeight: "1.4",
-                      background: "rgba(74, 31, 69, 0.06)",
+                      background: "rgba(26,42,94, 0.06)",
                       padding: "10px",
                       borderRadius: "8px",
                     }}>
@@ -964,8 +964,8 @@ function Approvals({ token, showToast }) {
                       style={{
                         padding: "20px",
                         borderRadius: "12px",
-                        background: "rgba(74, 31, 69, 0.03)",
-                        border: "1px solid rgba(74, 31, 69, 0.12)",
+                        background: "rgba(26,42,94, 0.03)",
+                        border: "1px solid rgba(26,42,94, 0.12)",
                       }}>
                       <p className="mini-label" style={{ marginBottom: "5px" }}>
                         RESOLVED STATE
@@ -1039,8 +1039,8 @@ function Approvals({ token, showToast }) {
                   marginTop: "20px",
                   padding: "15px",
                   borderRadius: "12px",
-                  background: "rgba(74, 31, 69, 0.02)",
-                  border: "1px dashed rgba(74, 31, 69, 0.12)",
+                  background: "rgba(26,42,94, 0.02)",
+                  border: "1px dashed rgba(26,42,94, 0.12)",
                 }}>
                 <p
                   style={{
@@ -1104,10 +1104,10 @@ function Approvals({ token, showToast }) {
               maxWidth: "420px",
               padding: "30px",
               borderRadius: "24px",
-              border: "1px solid rgba(74, 31, 69, 0.12)",
+              border: "1px solid rgba(26,42,94, 0.12)",
               background: "rgba(20, 25, 35, 0.85)",
               boxShadow:
-                "0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(74, 31, 69, 0.07)",
+                "0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(26,42,94, 0.07)",
               animation: "slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
             }}>
             <div style={{ textAlign: "center", marginBottom: "30px" }}>
@@ -1158,7 +1158,7 @@ function Approvals({ token, showToast }) {
                   minHeight: "10px",
                   borderRadius: "12px",
                   padding: "15px",
-                  background: "rgba(74, 31, 69, 0.03)",
+                  background: "rgba(26,42,94, 0.03)",
                 }}
               />
             </div>
@@ -1192,7 +1192,7 @@ function Approvals({ token, showToast }) {
                 className="action-btn"
                 style={{
                   flex: 1,
-                  background: "rgba(74, 31, 69, 0.05)",
+                  background: "rgba(26,42,94, 0.05)",
                   border: "1px solid var(--accent)",
                   color: "var(--ink)",
                   padding: "14px",

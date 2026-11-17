@@ -137,14 +137,14 @@ function LeaveCenter({ token, showToast }) {
           .glass-panel { background: var(--glass); border-radius: 20px; border: 1px solid var(--glass-border); display: flex; flex-direction: column; overflow: hidden; box-sizing: border-box; }
           .form-container { padding: 25px; min-height: 450px; }
           .history-container { height: 450px; }
-          .filter-bar { display: grid; grid-template-columns: 1.2fr 1.2fr 1.2fr; gap: 35px; padding: 12px; background: rgba(74, 31, 69, 0.06); border-bottom: 1px solid var(--glass-border); margin: 0 15px 10px 15px; border-radius: 10px; }
-          .filter-input { background: rgba(74, 31, 69, 0.05); border: 1px solid rgba(74, 31, 69, 0.12); color: var(--ink); border-radius: 8px; padding: 4px; font-size: 12px; outline: none; width: 95%; }
+          .filter-bar { display: grid; grid-template-columns: 1.2fr 1.2fr 1.2fr; gap: 35px; padding: 12px; background: rgba(26,42,94, 0.06); border-bottom: 1px solid var(--glass-border); margin: 0 15px 10px 15px; border-radius: 10px; }
+          .filter-input { background: rgba(26,42,94, 0.05); border: 1px solid rgba(26,42,94, 0.12); color: var(--ink); border-radius: 8px; padding: 4px; font-size: 12px; outline: none; width: 95%; }
           .scroll-list { flex: 1; overflow-y: auto; padding: 0 15px 15px 15px; }
           .scroll-list::-webkit-scrollbar { width: 6px; }
-          .scroll-list::-webkit-scrollbar-thumb { background: rgba(74, 31, 69, 0.1); border-radius: 10px; }
-          .history-item { display: flex; align-items: center; padding: 15px; background: rgba(74, 31, 69, 0.03); border-radius: 12px; margin-bottom: 10px; border: 1px solid transparent; transition: 0.3s; }
-          .history-item:hover { border-color: var(--accent-soft); background: rgba(74, 31, 69, 0.06); }
-          .date-range-box { min-width: 100px; border-right: 1px solid rgba(74, 31, 69, 0.12); margin-right: 15px; display: flex; flex-direction: column; }
+          .scroll-list::-webkit-scrollbar-thumb { background: rgba(26,42,94, 0.1); border-radius: 10px; }
+          .history-item { display: flex; align-items: center; padding: 15px; background: rgba(26,42,94, 0.03); border-radius: 12px; margin-bottom: 10px; border: 1px solid transparent; transition: 0.3s; }
+          .history-item:hover { border-color: var(--accent-soft); background: rgba(26,42,94, 0.06); }
+          .date-range-box { min-width: 100px; border-right: 1px solid rgba(26,42,94, 0.12); margin-right: 15px; display: flex; flex-direction: column; }
           .date-sub { font-size: 9px; opacity: 0.5; text-transform: uppercase; }
           .date-val { font-size: 12px; font-weight: bold; color: var(--accent); }
           .leave-desc { font-size: 11px; opacity: 0.6; margin-top: 4px; font-style: italic; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }

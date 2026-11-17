@@ -5,12 +5,12 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 import { IoNotificationsCircleSharp } from "react-icons/io5";
 import { API_URL } from "./apiConfig";
 
-const ACCENT = "#5c2252";
+const ACCENT = "#1a2a5e";
 
 const pillStyle = {
   position: "relative",
   padding: "8px 16px",
-  border: "1px solid rgba(92, 34, 82, 0.3)",
+  border: "1px solid rgba(26,42,94, 0.3)",
   borderRadius: "20px",
   color: ACCENT,
   cursor: "pointer",
@@ -214,7 +214,7 @@ export default function HeaderActions({ token, userId, logout }) {
                       key={idx}
                       style={{
                         padding: "12px",
-                        background: "rgba(74,31,69,0.06)",
+                        background: "rgba(26,42,94,0.06)",
                         borderRadius: "8px",
                         marginBottom: "10px",
                         borderLeft: `4px solid ${ACCENT}`,

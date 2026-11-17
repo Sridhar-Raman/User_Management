@@ -231,7 +231,7 @@ function AttendanceTab({ token, todayRecord, liveTimer }) {
             <div
               key={d}
               style={{
-                background: "rgba(74, 31, 69, 0.06)",
+                background: "rgba(26,42,94, 0.06)",
                 padding: "8px",
                 textAlign: "center",
                 borderRadius: "5px",
@@ -262,7 +262,7 @@ function AttendanceTab({ token, todayRecord, liveTimer }) {
                 onMouseEnter={() => !isFuture && handleMouseEnter(day)}
                 onMouseLeave={handleMouseLeave}
                 style={{
-                  background: isFuture ? "rgba(74, 31, 69, 0.05)" : "#fff",
+                  background: isFuture ? "rgba(26,42,94, 0.05)" : "#fff",
                   color: "#000",
                   height: "60px",
                   borderRadius: "8px",
@@ -340,7 +340,7 @@ function AttendanceTab({ token, todayRecord, liveTimer }) {
 
                         <hr
                           style={{
-                            border: "0.5px solid rgba(74, 31, 69, 0.12)",
+                            border: "0.5px solid rgba(26,42,94, 0.12)",
                             margin: "5px 0",
                           }}
                         />

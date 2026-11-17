@@ -285,7 +285,7 @@ function LeadTaskAssigner({ token, showToast }) {
           </div>
 
           {/* --- FILTER INTERFACE --- */}
-          <div className="filter-bar" style={{ padding: '12px 15px', background: 'rgba(74, 31, 69, 0.02)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+          <div className="filter-bar" style={{ padding: '12px 15px', background: 'rgba(26,42,94, 0.02)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
              <input 
                 className="glass-input"
                 placeholder="Search Operative Name..." 
@@ -320,7 +320,7 @@ function LeadTaskAssigner({ token, showToast }) {
                       cursor: 'pointer', 
                       padding: '15px', 
                       transition: 'all 0.3s ease',
-                      borderLeft: isSelected ? `4px solid var(--accent)` : `4px solid rgba(74, 31, 69, 0.12)`
+                      borderLeft: isSelected ? `4px solid var(--accent)` : `4px solid rgba(26,42,94, 0.12)`
                     }} 
                     onClick={() => setModal({ ...modal, show: true, empId: m._id, empName: m.name })}
                   >
@@ -346,7 +346,7 @@ function LeadTaskAssigner({ token, showToast }) {
                         <span className="mini-label" style={{ fontSize: '9px' }}>Current Load</span>
                         <span style={{ fontSize: '10px', fontWeight: 'bold' }}>{activeTasks} Tasks</span>
                       </div>
-                      <div style={{ height: '4px', background: 'rgba(74, 31, 69, 0.05)', borderRadius: '2px', overflow: 'hidden' }}>
+                      <div style={{ height: '4px', background: 'rgba(26,42,94, 0.05)', borderRadius: '2px', overflow: 'hidden' }}>
                         <div style={{ 
                           width: `${Math.min(activeTasks * 25, 100)}%`,
                           height: '100%', 
@@ -375,7 +375,7 @@ function LeadTaskAssigner({ token, showToast }) {
 
           {modal.show ? (
             <div style={{ animation: 'slideIn 0.3s ease' }}>
-              <div className="ai-insight-box" style={{ background: 'rgba(92, 34, 82, 0.03)', border: '1px solid var(--accent-soft)', borderRadius: '12px', padding: '20px' }}>
+              <div className="ai-insight-box" style={{ background: 'rgba(26,42,94, 0.03)', border: '1px solid var(--accent-soft)', borderRadius: '12px', padding: '20px' }}>
                 <div className="ai-head" style={{ color: 'var(--accent)', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <Sparkles size={16}/> 
                   <span style={{ fontWeight: 'bold', letterSpacing: '0.5px' }}>TARGET: {modal.empName.toUpperCase()}</span>
@@ -419,7 +419,7 @@ function LeadTaskAssigner({ token, showToast }) {
                 </button>
               </div>
 
-              <div style={{ marginTop: '20px', padding: '15px', borderRadius: '12px', background: 'rgba(74, 31, 69, 0.02)', border: '1px dashed rgba(74, 31, 69, 0.1)' }}>
+              <div style={{ marginTop: '20px', padding: '15px', borderRadius: '12px', background: 'rgba(26,42,94, 0.02)', border: '1px dashed rgba(26,42,94, 0.1)' }}>
                 <p style={{ fontSize: '0.7rem', opacity: 0.5, margin: 0, lineHeight: '1.4' }}>
                   <ShieldAlert size={12} style={{ verticalAlign: 'middle', marginRight: '5px' }}/>
                   Deploying this task will alert the operative immediately. Ensure the objective is clear and the deadline is realistic.

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { CheckCircle2 } from "lucide-react";
 import BrandLogo from "./BrandLogo";
+import AuthNav from "./AuthNav";
 import PasswordInput from "./PasswordInput";
 import { API_URL } from "./apiConfig";
 
@@ -60,6 +61,7 @@ export default function SignupPage({ go }) {
 
   return (
     <div className="overlay login-screen" style={{ overflowY: "auto" }}>
+      <AuthNav go={go} current="signup" />
       <div
         className="glass login-card"
         style={{ width: "min(440px, 92vw)", margin: "auto", textAlign: "left" }}>

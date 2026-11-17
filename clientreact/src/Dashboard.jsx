@@ -16,17 +16,17 @@ import { API_URL } from "./apiConfig";
 
 // Chart ink for the light cream cards.
 const INK = {
-  series: "#7d3d71",
-  primary: "#2a1530",
-  secondary: "#5d4a5b",
-  muted: "#8b7a89",
-  grid: "rgba(74, 31, 69, 0.12)",
-  axis: "rgba(74, 31, 69, 0.28)",
+  series: "#ff4fa3",
+  primary: "#14204a",
+  secondary: "#4b5878",
+  muted: "#7c88a8",
+  grid: "rgba(26,42,94, 0.12)",
+  axis: "rgba(26,42,94, 0.28)",
 };
 
 // Pastel chip colours for the tile icons (background, icon).
 const TONES = {
-  lilac: ["#eadbe6", "#6a2c5e"],
+  lilac: ["#ffd6ea", "#ff2d8f"],
   amber: ["#f3e3c4", "#a8741a"],
   green: ["#d9ebe0", "#2f7d4f"],
   red: ["#f7d9d9", "#b23b3b"],
@@ -153,14 +153,14 @@ function BarTooltip({ active, payload, label, unit }) {
   return (
     <div
       style={{
-        background: "#2a1530",
+        background: "#14204a",
         border: "none",
         borderRadius: 8,
         padding: "6px 10px",
         fontSize: "0.78rem",
         color: "#fff",
       }}>
-      <div style={{ color: "#d6bad0" }}>{label}</div>
+      <div style={{ color: "#b9cdf5" }}>{label}</div>
       <strong>
         {payload[0].value}
         {typeof unit === "function" ? unit(payload[0].value) : unit}
@@ -319,7 +319,7 @@ function Dashboard({ token, showToast, userRole }) {
                 <XAxis dataKey="status" {...axisProps} />
                 <YAxis {...axisProps} allowDecimals={false} />
                 <RechartsTooltip
-                  cursor={{ fill: "rgba(74, 31, 69, 0.06)" }}
+                  cursor={{ fill: "rgba(26,42,94, 0.06)" }}
                   content={<BarTooltip unit={(n) => (n === 1 ? " task" : " tasks")} />}
                 />
                 <Bar
@@ -349,7 +349,7 @@ function Dashboard({ token, showToast, userRole }) {
                     ticks={[0, 2, 4, 6, 8, 10]}
                   />
                   <RechartsTooltip
-                    cursor={{ fill: "rgba(74, 31, 69, 0.06)" }}
+                    cursor={{ fill: "rgba(26,42,94, 0.06)" }}
                     content={<BarTooltip unit=" hrs" />}
                   />
                   <ReferenceLine

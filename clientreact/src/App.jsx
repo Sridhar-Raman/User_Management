@@ -4,6 +4,7 @@ import axios from "axios";
 import "./App.css";
 import { API_URL } from "./apiConfig";
 import BrandLogo from "./BrandLogo";
+import AuthNav from "./AuthNav";
 import PasswordInput from "./PasswordInput";
 import LandingPage from "./LandingPage";
 import SignupPage from "./SignupPage";
@@ -185,7 +186,7 @@ export default function App() {
             <div style={{ display: "flex", gap: "10px", width: "100%" }}>
               <button
                 className="action-btn"
-                style={{ flex: 1, background: "rgba(74,31,69,0.08)", color: "inherit" }}
+                style={{ flex: 1, background: "rgba(26,42,94,0.08)", color: "inherit" }}
                 autoFocus
                 disabled={loggingOut}
                 onClick={() => setConfirmingLogout(false)}>
@@ -223,6 +224,7 @@ function LoginOverlay({ onLogin, go }) {
 
   return (
     <div className="overlay login-screen">
+      <AuthNav go={go} current="login" />
       <div className="glass login-card">
         <BrandLogo size={48} caption="User management" spaced={false} onLight />
         <form

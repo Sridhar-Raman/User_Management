@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   ChevronUp,
   CalendarCheck,
@@ -19,7 +19,7 @@ import BrandLogo from "./BrandLogo";
 const FEATURES = [
   {
     icon: CalendarCheck,
-    tone: ["#eadbe6", "#6a2c5e"],
+    tone: ["#ffd6ea", "#ff2d8f"],
     title: "Task assignment",
     text: "Assign work with deadlines, watch status move from Pending to Completed, and see who is overloaded at a glance.",
   },
@@ -43,7 +43,7 @@ const FEATURES = [
   },
   {
     icon: MessageSquare,
-    tone: ["#eadbe6", "#6a2c5e"],
+    tone: ["#ffd6ea", "#ff2d8f"],
     title: "Team messenger",
     text: "A company-wide channel plus private conversations, with file sharing, edit and delete.",
   },
@@ -98,10 +98,10 @@ function Button({ children, onClick, variant = "primary", large = false }) {
   };
   const styles =
     variant === "primary"
-      ? { ...base, background: "#5c2252", color: "#fff" }
+      ? { ...base, background: "#1a2a5e", color: "#fff" }
       : variant === "light"
-        ? { ...base, background: "#f4f1ec", color: "#4a1f45" }
-        : { ...base, background: "transparent", color: "#2a1530", borderColor: "rgba(74,31,69,0.28)" };
+        ? { ...base, background: "#ffffff", color: "#1a2a5e" }
+        : { ...base, background: "transparent", color: "#14204a", borderColor: "rgba(26,42,94,0.28)" };
   return (
     <button type="button" onClick={onClick} style={styles}>
       {children}
@@ -115,8 +115,8 @@ function PreviewTile({ label, value, tone }) {
       style={{
         flex: 1,
         minWidth: 0,
-        background: "#fbf9f6",
-        border: "1px solid rgba(74,31,69,0.1)",
+        background: "#f7f9ff",
+        border: "1px solid rgba(26,42,94,0.1)",
         borderRadius: 14,
         padding: "12px 14px",
       }}>
@@ -130,7 +130,7 @@ function PreviewTile({ label, value, tone }) {
         }}
       />
       <div style={{ fontSize: "1.35rem", fontWeight: 700, lineHeight: 1.1 }}>{value}</div>
-      <div style={{ fontSize: "0.72rem", color: "#5d4a5b" }}>{label}</div>
+      <div style={{ fontSize: "0.72rem", color: "#4b5878" }}>{label}</div>
     </div>
   );
 }
@@ -169,6 +169,18 @@ export default function LandingPage({ go }) {
   };
   const scrollToSection = (ref) =>
     ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  // Arriving from the login/sign-up menu: jump to the section that was picked.
+  useEffect(() => {
+    let id = null;
+    try {
+      id = sessionStorage.getItem("lpSection");
+      sessionStorage.removeItem("lpSection");
+    } catch {
+      /* ignore */
+    }
+    const target = { features: featuresRef, roles: rolesRef, start: startRef }[id];
+    if (target) setTimeout(() => target.current?.scrollIntoView({ block: "start" }), 50);
+  }, []);
   const scrollToTop = () => pageRef.current?.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
@@ -179,8 +191,8 @@ export default function LandingPage({ go }) {
         height: "100dvh",
         overflowY: "auto",
         overflowX: "hidden",
-        background: "linear-gradient(180deg, #d9b9cb 0%, #d4b0c5 38%, #e6d3de 100%)",
-        color: "#2a1530",
+        background: "linear-gradient(180deg, #a9c9fb 0%, #c9d5f8 45%, #f8d3ea 100%)",
+        color: "#14204a",
       }}>
       {/* Sticky top navigation: logo, section tabs, account buttons */}
       <header className="lp-nav">
@@ -227,8 +239,9 @@ export default function LandingPage({ go }) {
                 display: "inline-block",
                 padding: "6px 14px",
                 borderRadius: 999,
-                background: "rgba(92,34,82,0.12)",
-                color: "#5c2252",
+                background: "#ffc9e3",
+                border: "1px solid rgba(255,45,143,0.25)",
+                color: "#ff2d8f",
                 fontSize: "0.8rem",
                 fontWeight: 600,
                 marginBottom: 18,
@@ -249,7 +262,7 @@ export default function LandingPage({ go }) {
               style={{
                 fontSize: "1.1rem",
                 lineHeight: 1.6,
-                color: "#4a3548",
+                color: "#3d4a6b",
                 margin: "20px 0 30px",
                 maxWidth: 520,
               }}>
@@ -264,7 +277,7 @@ export default function LandingPage({ go }) {
                 Log in
               </Button>
             </div>
-            <p style={{ fontSize: "0.85rem", color: "#5d4a5b", marginTop: 16 }}>
+            <p style={{ fontSize: "0.85rem", color: "#4b5878", marginTop: 16 }}>
               New accounts are reviewed by an administrator before they can sign in.
             </p>
           </div>
@@ -273,25 +286,25 @@ export default function LandingPage({ go }) {
           <div
             aria-hidden="true"
             style={{
-              background: "#f4f1ec",
+              background: "#ffffff",
               borderRadius: 22,
               padding: 22,
-              boxShadow: "0 30px 70px rgba(74,31,69,0.25)",
-              border: "1px solid rgba(74,31,69,0.1)",
+              boxShadow: "0 30px 70px rgba(26,42,94,0.25)",
+              border: "1px solid rgba(26,42,94,0.1)",
             }}>
             <div style={{ fontWeight: 700, fontSize: "1.05rem" }}>Good evening, Alex</div>
-            <div style={{ fontSize: "0.78rem", color: "#5d4a5b", marginBottom: 14 }}>
+            <div style={{ fontSize: "0.78rem", color: "#4b5878", marginBottom: 14 }}>
               Wednesday, October 28
             </div>
             <div style={{ display: "flex", gap: 10, marginBottom: 14 }}>
-              <PreviewTile label="Tasks done" value="12/15" tone="#eadbe6" />
+              <PreviewTile label="Tasks done" value="12/15" tone="#ffd6ea" />
               <PreviewTile label="Hours this week" value="31 hrs" tone="#f3e3c4" />
               <PreviewTile label="Efficiency" value="86%" tone="#d9ebe0" />
             </div>
             <div
               style={{
-                background: "#fbf9f6",
-                border: "1px solid rgba(74,31,69,0.1)",
+                background: "#f7f9ff",
+                border: "1px solid rgba(26,42,94,0.1)",
                 borderRadius: 14,
                 padding: "12px 14px 14px",
               }}>
@@ -305,7 +318,7 @@ export default function LandingPage({ go }) {
                     style={{
                       flex: 1,
                       height: `${h}%`,
-                      background: "#7d3d71",
+                      background: "#ff4fa3",
                       borderRadius: "6px 6px 0 0",
                     }}
                   />
@@ -322,7 +335,7 @@ export default function LandingPage({ go }) {
           <h2 style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", margin: "0 0 8px", fontWeight: 700 }}>
             Everything your team needs day to day
           </h2>
-          <p style={{ color: "#4a3548", margin: "0 0 28px", fontSize: "1.05rem" }}>
+          <p style={{ color: "#3d4a6b", margin: "0 0 28px", fontSize: "1.05rem" }}>
             Built for how small and mid-sized teams actually work.
           </p>
           <div
@@ -335,11 +348,11 @@ export default function LandingPage({ go }) {
               <article
                 key={title}
                 style={{
-                  background: "#f4f1ec",
-                  border: "1px solid rgba(74,31,69,0.1)",
+                  background: "#ffffff",
+                  border: "1px solid rgba(26,42,94,0.1)",
                   borderRadius: 18,
                   padding: 22,
-                  boxShadow: "0 1px 2px rgba(74,31,69,0.06)",
+                  boxShadow: "0 1px 2px rgba(26,42,94,0.06)",
                 }}>
                 <div
                   style={{
@@ -356,7 +369,7 @@ export default function LandingPage({ go }) {
                   <Icon size={24} />
                 </div>
                 <h3 style={{ margin: "0 0 6px", fontSize: "1.1rem" }}>{title}</h3>
-                <p style={{ margin: 0, color: "#5d4a5b", lineHeight: 1.55, fontSize: "0.95rem" }}>
+                <p style={{ margin: 0, color: "#4b5878", lineHeight: 1.55, fontSize: "0.95rem" }}>
                   {text}
                 </p>
               </article>
@@ -371,7 +384,7 @@ export default function LandingPage({ go }) {
           <h2 style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", margin: "0 0 8px", fontWeight: 700 }}>
             The right view for every role
           </h2>
-          <p style={{ color: "#4a3548", margin: "0 0 28px", fontSize: "1.05rem" }}>
+          <p style={{ color: "#3d4a6b", margin: "0 0 28px", fontSize: "1.05rem" }}>
             People only see and do what their role needs.
           </p>
           <div
@@ -384,7 +397,7 @@ export default function LandingPage({ go }) {
               <article
                 key={name}
                 style={{
-                  background: "#4a1f45",
+                  background: "#1a2a5e",
                   color: "#fff",
                   borderRadius: 18,
                   padding: 22,
@@ -407,7 +420,7 @@ export default function LandingPage({ go }) {
                       display: "inline-flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      color: "#e2c3dc",
+                      color: "#ffc9e3",
                     }}>
                     <Icon size={20} />
                   </span>
@@ -423,9 +436,9 @@ export default function LandingPage({ go }) {
                         alignItems: "flex-start",
                         fontSize: "0.92rem",
                         lineHeight: 1.45,
-                        color: "#ecdde8",
+                        color: "#e6eeff",
                       }}>
-                      <Check size={16} style={{ flexShrink: 0, marginTop: 2, color: "#e2c3dc" }} />
+                      <Check size={16} style={{ flexShrink: 0, marginTop: 2, color: "#ffc9e3" }} />
                       {p}
                     </li>
                   ))}
@@ -453,17 +466,17 @@ export default function LandingPage({ go }) {
           }}>
           <div
             style={{
-              background: "#f4f1ec",
+              background: "#ffffff",
               borderRadius: 24,
               padding: "40px 28px",
               textAlign: "center",
-              border: "1px solid rgba(74,31,69,0.1)",
-              boxShadow: "0 18px 50px rgba(74,31,69,0.14)",
+              border: "1px solid rgba(26,42,94,0.1)",
+              boxShadow: "0 18px 50px rgba(26,42,94,0.14)",
             }}>
             <h2 style={{ margin: "0 0 10px", fontSize: "clamp(1.5rem, 3vw, 2rem)" }}>
               Ready to get started?
             </h2>
-            <p style={{ margin: "0 auto 24px", color: "#5d4a5b", maxWidth: 520, lineHeight: 1.55 }}>
+            <p style={{ margin: "0 auto 24px", color: "#4b5878", maxWidth: 520, lineHeight: 1.55 }}>
               Request an account and an administrator will approve it, or log in if
               you already have one.
             </p>
@@ -481,8 +494,8 @@ export default function LandingPage({ go }) {
 
       <footer
         style={{
-          background: "#4a1f45",
-          color: "#ecdde8",
+          background: "#1a2a5e",
+          color: "#e6eeff",
           padding: "28px 24px",
         }}>
         <div

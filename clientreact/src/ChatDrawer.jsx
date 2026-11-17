@@ -224,7 +224,7 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
           borderRight: isSidebarOpen ? "1px solid var(--glass-border)" : "none",
           display: "flex",
           flexDirection: "column",
-          background: "rgba(74, 31, 69, 0.06)",
+          background: "rgba(26,42,94, 0.06)",
           overflow: "hidden",
           whiteSpace: "nowrap",
         }}>
@@ -257,7 +257,7 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
               onChange={(e) => setSearchQuery(e.target.value)}
               style={{
                 width: "83%",
-                background: "rgba(74, 31, 69, 0.05)",
+                background: "rgba(26,42,94, 0.05)",
                 border: "1px solid var(--glass-border)",
                 borderRadius: "8px",
                 padding: "8px 10px 8px 30px",
@@ -362,7 +362,7 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
                           emp.pulseStatus === "Active"
                             ? "var(--success)"
                             : "var(--text-dim)",
-                        border: "1px solid #2a1530",
+                        border: "1px solid #14204a",
                       }}
                     />
                   </div>
@@ -387,7 +387,7 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          background: "rgba(74, 31, 69, 0.04)",
+          background: "rgba(26,42,94, 0.04)",
         }}>
         {selectedChat ? (
           <>
@@ -405,7 +405,7 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
                 <button
                   onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                   style={{
-                    background: "rgba(74, 31, 69, 0.05)",
+                    background: "rgba(26,42,94, 0.05)",
                     border: "1px solid var(--glass-border)",
                     color: "var(--ink)",
                     cursor: "pointer",
@@ -472,9 +472,9 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
                           overflow: "hidden",
                           display: "flex",
                           flexDirection: "column",
-                          background: "#fbf9f6", border: "1px solid var(--line)",
+                          background: "#f7f9ff", border: "1px solid var(--line)",
                           border: "1px solid var(--glass-border)",
-                          boxShadow: "0 6px 18px rgba(74, 31, 69, 0.18)",
+                          boxShadow: "0 6px 18px rgba(26,42,94, 0.18)",
                         }}>
                         <button
                           onClick={() => startEdit(msg)}
@@ -519,7 +519,7 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
                           ? "16px 16px 4px 16px"
                           : "16px 16px 16px 4px",
                         background: isMine
-                          ? "linear-gradient(135deg, var(--accent), #8a4a80)"
+                          ? "linear-gradient(135deg, var(--accent), #ff4fa3)"
                           : "var(--glass)",
                         color: isMine ? "#fff" : "var(--ink)",
                         border: isMine
@@ -550,7 +550,7 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
                             value={editBuffer}
                             onChange={(e) => setEditBuffer(e.target.value)}
                             style={{
-                              background: "rgba(74, 31, 69, 0.2)",
+                              background: "rgba(26,42,94, 0.2)",
                               border: "none",
                               color: isMine ? "#fff" : "var(--ink)",
                               borderRadius: "4px",
@@ -647,7 +647,7 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
               onSubmit={sendMessage}
               style={{
                 padding: "20px 25px",
-                background: "rgba(74, 31, 69, 0.06)",
+                background: "rgba(26,42,94, 0.06)",
                 borderTop: "1px solid var(--glass-border)",
               }}>
               <div
@@ -710,7 +710,7 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
                   position: "absolute",
                   top: "20px",
                   left: "20px",
-                  background: "rgba(74, 31, 69, 0.05)",
+                  background: "rgba(26,42,94, 0.05)",
                   border: "1px solid var(--glass-border)",
                   color: "var(--ink)",
                   cursor: "pointer",
@@ -785,7 +785,7 @@ export default function ChatDrawer({ socket, user, isOpen, onClose }) {
                 style={{
                   padding: "10px 20px",
                   borderRadius: "8px",
-                  background: "rgba(74, 31, 69, 0.1)",
+                  background: "rgba(26,42,94, 0.1)",
                   border: "1px solid var(--glass-border)",
                   color: "var(--ink)",
                   cursor: "pointer",

@@ -96,7 +96,7 @@ function TaskCenter({ token, showToast }) {
 
   const columnConfig = [
     { id: "Pending", color: "#a8741a" },
-    { id: "Planning", color: "#6a5acd" },
+    { id: "Planning", color: "#4f6bed" },
     { id: "Processing", color: "#2b6cb0" },
     { id: "Completed", color: "#2f7d4f" },
   ];
@@ -167,7 +167,7 @@ function TaskCenter({ token, showToast }) {
           }
           .analytics-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; margin-bottom: 30px; }
           .system-gauge-pane { background: var(--glass); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; position: relative; min-height: 240px; }
-          .at-risk-pane { background: rgba(74, 31, 69, 0.06); border-radius: 20px; padding: 30px; }
+          .at-risk-pane { background: rgba(26,42,94, 0.06); border-radius: 20px; padding: 30px; }
           .stat-grid-compact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px; }
           .small-stat-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 15px; border-radius: 14px; text-align: center; cursor: pointer; transition: 0.2s; }
           .small-stat-card:hover { background: var(--accent-soft); border-color: var(--accent); transform: translateY(-3px); }
@@ -175,20 +175,20 @@ function TaskCenter({ token, showToast }) {
           .compact-card { padding: 16px !important; border-radius: 12px !important; position: relative; min-height: 140px; display: flex; flex-direction: column; justify-content: space-between; }
           .task-title { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
           .timestamp-label { font-size: 8px; text-transform: uppercase; color: var(--text-dim); }
-          .timestamp-value { font-size: 11px; color: rgba(42, 21, 48, 0.9); font-family: monospace; margin-bottom: 8px; }
-          .task-status-overlay { position: absolute; inset: 0; background: #fbf9f6; border: 1px solid var(--accent); border-radius: 12px; padding: 12px; z-index: 10; display: flex; flex-direction: column; justify-content: center; animation: popIn 0.2s ease-out; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
-          .pop-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid rgba(74, 31, 69, 0.12); padding-bottom: 5px; }
+          .timestamp-value { font-size: 11px; color: rgba(20,32,74, 0.9); font-family: monospace; margin-bottom: 8px; }
+          .task-status-overlay { position: absolute; inset: 0; background: #f7f9ff; border: 1px solid var(--accent); border-radius: 12px; padding: 12px; z-index: 10; display: flex; flex-direction: column; justify-content: center; animation: popIn 0.2s ease-out; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+          .pop-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid rgba(26,42,94, 0.12); padding-bottom: 5px; }
           .pop-title { font-size: 9px; font-weight: bold; color: var(--accent); letter-spacing: 1px; }
           .pop-close { background: none; border: none; color: var(--ink); cursor: pointer; font-size: 16px; line-height: 1; padding: 2px 5px; opacity: 0.6; }
           .pop-close:hover { opacity: 1; }
           .task-status-btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-          .task-status-option { font-size: 10px; padding: 6px 2px; border-radius: 6px; cursor: pointer; background: rgba(74, 31, 69, 0.03); transition: 0.2s; border: 1px solid transparent; }
-          .task-status-option:hover { background: rgba(74, 31, 69, 0.1); }
-          .filter-bar { background: rgba(74, 31, 69, 0.05); padding: 10px 15px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px; border: 1px solid var(--glass-border); }
+          .task-status-option { font-size: 10px; padding: 6px 2px; border-radius: 6px; cursor: pointer; background: rgba(26,42,94, 0.03); transition: 0.2s; border: 1px solid transparent; }
+          .task-status-option:hover { background: rgba(26,42,94, 0.1); }
+          .filter-bar { background: rgba(26,42,94, 0.05); padding: 10px 15px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px; border: 1px solid var(--glass-border); }
           .filter-group { display: flex; align-items: center; gap: 10px; }
           .filter-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
-          .filter-input { background: #fbf9f6; border: 1px solid var(--glass-border); color: var(--ink); padding: 5px 10px; border-radius: 6px; font-size: 12px; outline: none; }
-          .filter-toggle { display: flex; background: #fbf9f6; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); }
+          .filter-input { background: #f7f9ff; border: 1px solid var(--glass-border); color: var(--ink); padding: 5px 10px; border-radius: 6px; font-size: 12px; outline: none; }
+          .filter-toggle { display: flex; background: #f7f9ff; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); }
           .toggle-btn { padding: 6px 12px; font-size: 10px; border: none; background: transparent; color: var(--text-dim); cursor: pointer; transition: 0.2s; }
           .toggle-btn.active { background: var(--accent); color: var(--ink); }
           
@@ -196,7 +196,7 @@ function TaskCenter({ token, showToast }) {
           @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
           .completion-badge, .remaining-badge { margin-top: 8px; padding: 6px; border-radius: 6px; text-align: center; }
           .completion-badge { background: rgba(46, 204, 113, 0.1); border: 1px solid #2f7d4f; }
-          .remaining-badge { background: rgba(74, 31, 69, 0.05); border: 1px solid rgba(74, 31, 69, 0.2); }
+          .remaining-badge { background: rgba(26,42,94, 0.05); border: 1px solid rgba(26,42,94, 0.2); }
         `}
       </style>
 
@@ -310,7 +310,7 @@ function TaskCenter({ token, showToast }) {
                       </Pie>
                       <RechartsTooltip
                         contentStyle={{
-                          background: "#fbf9f6",
+                          background: "#f7f9ff",
                           border: "none",
                           borderRadius: "8px",
                           fontSize: "12px",
@@ -537,8 +537,8 @@ function TaskCenter({ token, showToast }) {
                         style={{
                           borderLeft: `4px solid ${col.color}`,
                           background: isActive
-                            ? "rgba(74, 31, 69, 0.12)"
-                            : "rgba(74, 31, 69, 0.07)",
+                            ? "rgba(26,42,94, 0.12)"
+                            : "rgba(26,42,94, 0.07)",
                           cursor: "pointer",
                         }}>
                         <div className="task-title">{t.title}</div>
@@ -578,7 +578,7 @@ function TaskCenter({ token, showToast }) {
                           style={{
                             marginTop: "4px",
                             paddingTop: "6px",
-                            borderTop: "1px solid rgba(74, 31, 69, 0.12)",
+                            borderTop: "1px solid rgba(26,42,94, 0.12)",
                             display: "flex",
                             justifyContent: "space-between",
                             alignItems: "center",

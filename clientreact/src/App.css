@@ -2,8 +2,8 @@
   --glass: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.08);
 
-  --accent: #5c2252;
-  --accent-soft: rgba(92, 34, 82, 0.15);
+  --accent: #1a2a5e;
+  --accent-soft: rgba(26,42,94, 0.15);
 
   --success: #2ed573;
   --warning: #ffa502;
@@ -433,7 +433,7 @@ small {
 
 .action-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(92, 34, 82, 0.35);
+  box-shadow: 0 6px 18px rgba(26,42,94, 0.35);
 }
 
 .action-btn:disabled {
@@ -558,7 +558,7 @@ small {
 }
 
 .status-pill.processing {
-  background: rgba(92, 34, 82, 0.2);
+  background: rgba(26,42,94, 0.2);
   color: var(--accent);
 }
 
@@ -869,14 +869,14 @@ select.uf-field.uf-field {
   background:
     linear-gradient(rgba(12, 9, 18, 0.05), rgba(12, 9, 18, 0.3)),
     url("/login-bg.svg") center / cover no-repeat,
-    #0c0912;
+    #0b1230;
   backdrop-filter: none;
 }
 
 .login-screen .login-card {
   background: rgba(20, 12, 28, 0.72);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(92, 34, 82, 0.18);
+  border: 1px solid rgba(26,42,94, 0.18);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
@@ -930,7 +930,7 @@ select.uf-field.uf-field {
 
 /* This is the key: Styling the options list */
 .custom-select option {
-  background: #2a1530; /* Matches your body background */
+  background: #14204a; /* Matches your body background */
   color: white;
   padding: 10px;
 }
@@ -1326,8 +1326,8 @@ select.uf-field.uf-field {
 
 .active-border {
   border: 1px solid var(--accent) !important;
-  background: rgba(92, 34, 82, 0.08) !important;
-  box-shadow: 0 0 20px rgba(92, 34, 82, 0.15);
+  background: rgba(26,42,94, 0.08) !important;
+  box-shadow: 0 0 20px rgba(26,42,94, 0.15);
 }
 
 .mini-label {
@@ -1398,7 +1398,7 @@ select.uf-field.uf-field {
   justify-content: center;
 }
 
-.group-icon.global { background: rgba(92, 34, 82, 0.2); color: var(--accent); }
+.group-icon.global { background: rgba(26,42,94, 0.2); color: var(--accent); }
 .group-icon.dept { background: rgba(46, 213, 115, 0.2); color: var(--success); }
 
 .msg-bubble {
@@ -1815,7 +1815,7 @@ select.uf-field.uf-field {
   align-items: center;
   gap: 4px;
   font-size: 0.8rem;
-  color: #5c2252;
+  color: #1a2a5e;
   width: 45px; /* Fixed width so 1 digit vs 2 digits doesn't push the button */
 }
 
@@ -1832,9 +1832,9 @@ select.uf-field.uf-field {
 
 /* Style for when it's already endorsed */
 .endorse-btn.is-endorsed {
-  background: rgba(92, 34, 82, 0.1);
-  border-color: rgba(92, 34, 82, 0.3);
-  color: #5c2252;
+  background: rgba(26,42,94, 0.1);
+  border-color: rgba(26,42,94, 0.3);
+  color: #1a2a5e;
   cursor:not-allowed;
   opacity: 0.8;
 }
@@ -1918,7 +1918,7 @@ select.uf-field.uf-field {
 
 /* Hover & Focus */
 .custom-select:hover {
-  border-color: #5c2252; /* Your accent color */
+  border-color: #1a2a5e; /* Your accent color */
 }
 
 .custom-select:focus {
@@ -2043,36 +2043,52 @@ body,
    Light mauve page, flush deep-plum icon sidebar, cream cards with dark text,
    plum primary buttons. Loaded last so it overrides the earlier dark styles. */
 :root {
-  --page-bg: #d4b0c5;
-  --surface: #f4f1ec;
-  --surface-2: #ebe5df;
-  --ink: #2a1530;
-  --ink-2: #5d4a5b;
-  --ink-3: #8b7a89;
-  --line: rgba(74, 31, 69, 0.12);
-  --plum: #4a1f45;
-  --plum-2: #5c2252;
-  --plum-3: #7d3d71;
+  --page-bg: #c3d7fb;
+  --surface: #ffffff;
+  --surface-2: #eef3ff;
+  --ink: #14204a;
+  --ink-2: #4b5878;
+  --ink-3: #7c88a8;
+  --line: rgba(26,42,94, 0.12);
+  --plum: #1a2a5e;
+  --plum-2: #1a2a5e;
+  --plum-3: #ff4fa3;
 
   --glass: var(--surface);
   --glass-border: var(--line);
   --text-dim: var(--ink-2);
-  --accent: #5c2252;
-  --accent-soft: rgba(92, 34, 82, 0.12);
+  --accent: #1a2a5e;
+  --accent-soft: rgba(26,42,94, 0.12);
   --success: #2f7d4f;
   --warning: #a8741a;
   --danger: #c0392b;
 }
 
+:root {
+  --page-gradient: linear-gradient(180deg, #a9c9fb 0%, #c9d5f8 45%, #f8d3ea 100%);
+  --pink: #ff2d8f;
+  --pink-soft: #ffc9e3;
+}
+
 html,
 body,
 #root {
-  background: var(--page-bg);
+  background: var(--page-gradient);
+  background-attachment: fixed;
   color: var(--ink);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 body {
-  background: var(--page-bg);
+  background: var(--page-gradient);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.035em;
 }
 
 /* Cards */
@@ -2080,22 +2096,22 @@ body {
   background: var(--surface);
   backdrop-filter: none;
   border: 1px solid var(--line);
-  border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(74, 31, 69, 0.06), 0 8px 24px rgba(74, 31, 69, 0.07);
+  border-radius: 24px;
+  box-shadow: 0 1px 2px rgba(26,42,94, 0.06), 0 8px 24px rgba(26,42,94, 0.07);
   color: var(--ink);
 }
 
-/* Shell: sidebar flush to the left edge, content padded on the mauve page */
+/* Shell: sidebar flush to the left edge, content padded on the gradient page */
 .app-container {
   padding: 0;
   gap: 0;
-  background: var(--page-bg);
+  background: transparent;
 }
 
 .main-content {
   padding: 28px 36px 24px;
   gap: 18px;
-  background: var(--page-bg);
+  background: transparent;
 }
 
 .sidebar.glass {
@@ -2108,7 +2124,7 @@ body {
 
 .sidebar:is(:hover, :has(:focus-visible)) {
   background: var(--plum);
-  box-shadow: 8px 0 32px rgba(42, 21, 48, 0.35);
+  box-shadow: 8px 0 32px rgba(20,32,74, 0.35);
 }
 
 /* Heading row: no card, just the title on the page */
@@ -2148,7 +2164,7 @@ body {
 }
 
 .sidebar .nav-link svg {
-  color: #d6bad0;
+  color: #b9cdf5;
 }
 
 .sidebar .nav-link:hover {
@@ -2240,11 +2256,11 @@ input[type="datetime-local"] {
 }
 
 .action-btn:hover:not(:disabled) {
-  box-shadow: 0 6px 18px rgba(92, 34, 82, 0.3);
+  box-shadow: 0 6px 18px rgba(26,42,94, 0.3);
 }
 
 .uf-btn-ghost.uf-btn-ghost {
-  background: rgba(74, 31, 69, 0.08);
+  background: rgba(26,42,94, 0.08);
   color: var(--ink);
 }
 
@@ -2255,7 +2271,7 @@ input[type="datetime-local"] {
 
 /* Dialogs and toasts */
 .overlay {
-  background: rgba(42, 21, 48, 0.55);
+  background: rgba(20,32,74, 0.55);
   backdrop-filter: blur(6px);
 }
 
@@ -2270,7 +2286,7 @@ input[type="datetime-local"] {
   color: #fff;
 }
 
-/* Login screen keeps the dark skyline but uses a cream card */
+/* Login screen: dotted blue-to-pink gradient with a white card */
 .login-screen .login-card {
   background: var(--surface);
   border: 1px solid rgba(255, 255, 255, 0.35);
@@ -2280,10 +2296,15 @@ input[type="datetime-local"] {
 
 .overlay.login-screen {
   background:
-    linear-gradient(rgba(12, 9, 18, 0.05), rgba(12, 9, 18, 0.3)),
-    url("/login-bg.svg") center / cover no-repeat,
-    #0c0912;
+    radial-gradient(rgba(26, 42, 94, 0.14) 1.2px, transparent 1.4px) 0 0 / 24px 24px,
+    var(--page-gradient);
   backdrop-filter: none;
+}
+
+.login-screen .login-card {
+  box-shadow: 0 30px 70px rgba(26, 42, 94, 0.2);
+  border: none;
+  border-radius: 28px;
 }
 
 /* Inline white text (set in components for the old dark cards) becomes ink */
@@ -2309,16 +2330,16 @@ input[type="datetime-local"] {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(74, 31, 69, 0.06), 0 8px 24px rgba(74, 31, 69, 0.07);
+  box-shadow: 0 1px 2px rgba(26,42,94, 0.06), 0 8px 24px rgba(26,42,94, 0.07);
   color: var(--ink);
   padding: 24px;
   box-sizing: border-box;
 }
 
 .main-content > .page-content:not(.themed) .glass {
-  background: #fbf9f6;
+  background: #f7f9ff;
   border: 1px solid var(--line);
-  box-shadow: 0 1px 2px rgba(74, 31, 69, 0.05);
+  box-shadow: 0 1px 2px rgba(26,42,94, 0.05);
   color: var(--ink);
 }
 /* Avatars on cream cards */
@@ -2354,7 +2375,7 @@ select.custom-select,
   padding: 10px 22px 12px;
   border: none;
   border-radius: 999px;
-  background: linear-gradient(180deg, #8a4a80 0%, #5c2252 100%);
+  background: linear-gradient(180deg, #ff4fa3 0%, #1a2a5e 100%);
   color: #fff;
   font-family: inherit;
   font-size: 0.8rem;
@@ -2364,8 +2385,8 @@ select.custom-select,
   cursor: pointer;
   /* stacked shadows give the button a raised, solid edge */
   box-shadow:
-    0 6px 0 #3b1535,
-    0 14px 24px rgba(74, 31, 69, 0.35),
+    0 6px 0 #14204a,
+    0 14px 24px rgba(26,42,94, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.28);
   transform: perspective(520px) translateY(0) rotateX(0deg);
   transition: transform 0.16s ease, box-shadow 0.16s ease;
@@ -2374,21 +2395,21 @@ select.custom-select,
 .lp-3d-btn:hover {
   transform: perspective(520px) translateY(-3px) rotateX(10deg);
   box-shadow:
-    0 9px 0 #3b1535,
-    0 20px 30px rgba(74, 31, 69, 0.4),
+    0 9px 0 #14204a,
+    0 20px 30px rgba(26,42,94, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .lp-3d-btn:active {
   transform: perspective(520px) translateY(5px) rotateX(0deg);
   box-shadow:
-    0 1px 0 #3b1535,
-    0 5px 10px rgba(74, 31, 69, 0.3),
+    0 1px 0 #14204a,
+    0 5px 10px rgba(26,42,94, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .lp-3d-btn:focus-visible {
-  outline: 3px solid rgba(92, 34, 82, 0.45);
+  outline: 3px solid rgba(26,42,94, 0.45);
   outline-offset: 4px;
 }
 
@@ -2430,14 +2451,16 @@ select.custom-select,
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(217, 185, 203, 0.82);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(74, 31, 69, 0.08);
+  background: transparent;
+  padding: 18px 24px 0;
 }
 
 .lp-nav-inner {
   max-width: 1180px;
   margin: 0 auto;
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(26, 42, 94, 0.12);
   padding: 14px 24px;
   display: flex;
   align-items: center;
@@ -2456,7 +2479,7 @@ select.custom-select,
 .lp-tab {
   border: none;
   background: transparent;
-  color: #4a3548;
+  color: #3d4a6b;
   padding: 8px 16px;
   border-radius: 999px;
   font-family: inherit;
@@ -2467,19 +2490,93 @@ select.custom-select,
   transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+/* Keep the card clear of the left rail */
+.overlay.login-screen {
+  box-sizing: border-box;
+  padding-left: 76px;
+}
+
+/* Sidebar on the login / sign-up screens: pinned to the left edge */
+.auth-side {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+/* Transparent gradient glass instead of solid navy */
+.sidebar.glass.auth-side,
+.sidebar.glass.auth-side:is(:hover, :has(:focus-visible)) {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 201, 227, 0.4) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--ink);
+}
+
+.sidebar.auth-side:is(:hover, :has(:focus-visible)) {
+  box-shadow: 8px 0 32px rgba(26, 42, 94, 0.15);
+}
+
+.auth-side .nav-link {
+  color: var(--ink);
+}
+
+.auth-side .nav-link svg {
+  color: var(--plum);
+}
+
+.auth-side .nav-link:hover {
+  background: rgba(26, 42, 94, 0.08);
+}
+
+.sidebar.auth-side:not(:is(:hover, :has(:focus-visible))) .nav-link {
+  color: transparent;
+}
+
+.sidebar.auth-side .nav-link.active {
+  background: var(--pink);
+  color: #fff;
+}
+
+.sidebar.auth-side:not(:is(:hover, :has(:focus-visible))) .nav-link.active {
+  color: transparent;
+}
+
+.sidebar.auth-side .nav-link.active svg {
+  color: #fff;
+}
+
+.auth-side .divider {
+  border-color: rgba(26, 42, 94, 0.12);
+}
+
+.auth-side .brand-text {
+  color: var(--ink);
+}
+
+.auth-side .nav-menu {
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.auth-side .nav-link {
+  flex: 0 0 auto;
+  height: 48px;
+}
+
 .lp-tab:hover {
-  background: rgba(92, 34, 82, 0.12);
+  background: rgba(26,42,94, 0.12);
 }
 
 .lp-tab.active {
-  background: #5c2252;
-  color: #fff;
-  box-shadow: 0 3px 0 #3b1535, 0 8px 14px rgba(74, 31, 69, 0.25);
-  transform: translateY(-1px);
+  background: #e6eeff;
+  color: #1a2a5e;
 }
 
 .lp-tab:focus-visible {
-  outline: 3px solid rgba(92, 34, 82, 0.45);
+  outline: 3px solid rgba(26,42,94, 0.45);
   outline-offset: 2px;
 }
 

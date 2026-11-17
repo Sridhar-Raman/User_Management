@@ -40,11 +40,11 @@ export default function PasswordInput({
           border: "none",
           borderRadius: 6,
           background: "transparent",
-          color: "rgba(74,31,69,0.55)",
+          color: "rgba(26,42,94,0.55)",
           cursor: "pointer",
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = "#5c2252")}
-        onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(74,31,69,0.55)")}>
+        onMouseEnter={(e) => (e.currentTarget.style.color = "#1a2a5e")}
+        onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(26,42,94,0.55)")}>
         {visible ? <EyeOff size={18} /> : <Eye size={18} />}
       </button>
     </div>

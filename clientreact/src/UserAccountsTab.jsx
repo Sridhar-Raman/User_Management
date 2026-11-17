@@ -616,7 +616,7 @@ export default function UserAccountsTab({ token, showToast }) {
             </p>
             <div
               style={{
-                background: "rgba(74,31,69,0.06)",
+                background: "rgba(26,42,94,0.06)",
                 borderRadius: "8px",
                 padding: "12px",
                 fontFamily: "monospace",
