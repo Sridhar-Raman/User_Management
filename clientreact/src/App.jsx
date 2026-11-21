@@ -8,6 +8,8 @@ import AuthNav from "./AuthNav";
 import PasswordInput from "./PasswordInput";
 import LandingPage from "./LandingPage";
 import SignupPage from "./SignupPage";
+import ForgotPasswordPage from "./ForgotPasswordPage";
+import ResetPasswordPage from "./ResetPasswordPage";
 
 // Each user only ever sees one dashboard, so load it on demand.
 const AdminDashboard = lazy(() => import("./AdminDashboard"));
@@ -125,6 +127,9 @@ export default function App() {
   if (!token) {
     if (route === "login") return <LoginOverlay onLogin={handleLogin} go={go} />;
     if (route === "signup") return <SignupPage go={go} />;
+    if (route === "forgot-password") return <ForgotPasswordPage go={go} />;
+    if (route.startsWith("reset-password/"))
+      return <ResetPasswordPage go={go} token={route.slice("reset-password/".length)} />;
     return <LandingPage go={go} />;
   }
 
@@ -250,6 +255,14 @@ function LoginOverlay({ onLogin, go }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <div style={{ textAlign: "right", marginTop: -6 }}>
+            <button
+              type="button"
+              onClick={() => go("forgot-password")}
+              style={{ background: "none", border: "none", padding: 0, color: "var(--accent)", fontWeight: 600, cursor: "pointer", fontFamily: "inherit", fontSize: "0.82rem" }}>
+              Forgot password?
+            </button>
+          </div>
           {uiError && (
             <div
               className="login-error-message"

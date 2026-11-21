@@ -41,6 +41,11 @@ const UserSchema = new mongoose.Schema({
   pulseStatus: { type: String, default: "Available" },
   lastEndorsementDate: { type: Date, default: null },
 
+  // Forgot-password: a hashed, single-use, time-limited token. Only the hash
+  // is stored so a leaked database doesn't hand out working reset links.
+  resetPasswordTokenHash: { type: String, default: null },
+  resetPasswordExpires: { type: Date, default: null },
+
   // HIERARCHY FIELDS
   lead_id: { type: mongoose.Schema.Types.ObjectId, ref: "User", default: null },
   manager_id: {
@@ -59,5 +64,6 @@ const UserSchema = new mongoose.Schema({
 UserSchema.index({ lead_id: 1 });
 UserSchema.index({ manager_id: 1 });
 UserSchema.index({ role: 1, department: 1 });
+UserSchema.index({ resetPasswordTokenHash: 1 });
 
 module.exports =mongoose.model("User", UserSchema);
